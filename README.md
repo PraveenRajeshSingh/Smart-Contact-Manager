@@ -3,15 +3,15 @@ The "Contact-Manager" project is a full-stack web application built using java, 
 
 Some of the key features of the Contact-Manager application include:
 
-1.User authentication: Users can create an account and login to the application securely using spring-security
+   1. User authentication: Users can create an account and login to the application securely using spring-security
 
-2.Contact management: Once logged in, users can perform CRUD operations on their contacts, including creating, reading, updating, and deleting them.
+   2. Contact management: Once logged in, users can perform CRUD operations on their contacts, including creating, reading, updating, and deleting them.
 
-3.Contact search and sorting: Users can search for contacts by name and sort contacts by name.
+   3. Contact search and sorting: Users can search for contacts by name and sort contacts by name.
 
-4.User profile: Users can update their contacts details, including the pictures.
+   4. User profile: Users can update their contacts details, including the pictures.
 
-5. Responsive design: The application is designed to be responsive and compatible with different screen sizes.
+   5. Responsive design: The application is designed to be responsive and compatible with different screen sizes.
 
 The frontend of the application is built using Html, Css, Javascript, Thymeleaf, Bootstrap,TinyMCE. The backend is built using java and spring boot and MySQL for data storage.
 
