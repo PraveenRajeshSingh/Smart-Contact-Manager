@@ -1,7 +1,7 @@
 # Smart-Contact-Manager
-The "Contact-Manager" project is a full-stack web application built using java, html, css, javascript, thymeleaf, Spring-boot and Spring-security that allows users to manage their contacts. This application provides users with a simple and intuitive interface for creating, editing, and deleting contacts, as well as searching and sorting them.
+The "Smart-Contact-Manager" project is a full-stack web application built using java, html, css, javascript, thymeleaf, Spring-boot and Spring-security that allows users to manage their contacts. This application provides users with a simple and intuitive interface for creating, editing, and deleting contacts, as well as searching and sorting them.
 
-Some of the key features of the Contact-Manager application include:
+Some of the key features of the Smart-Contact-Manager application include:
 
    1. User authentication: Users can create an account and login to the application securely using spring-security
 
