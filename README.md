@@ -13,8 +13,8 @@ Some of the key features of the Contact-Manager application include:
 
    5. Responsive design: The application is designed to be responsive and compatible with different screen sizes.
 
-The frontend of the application is built using Html, Css, Javascript, Thymeleaf, Bootstrap,TinyMCE. The backend is built using java and spring boot and MySQL for data storage.
+The frontend of the application is built using Html, Css, Thymeleaf. The backend is built using java and spring boot and MySQL for data storage.
 
-The Contact-Manager project is a good example of a full-stack web application with user authentication and CRUD functionality, and it can be used as a starting point for building more complex applications.
+The Smart-Contact-Manager project is a good example of a full-stack web application with user authentication and CRUD functionality, and it can be used as a starting point for building more complex applications.
 
 
