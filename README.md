@@ -20,4 +20,30 @@ The Smart-Contact-Manager project is a good example of a full-stack web applicat
 # Homepage
 ![image](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/0032c6fb-4f60-4fbe-add6-7aeebcdaac4c)
 
+# Register Page
+In Register Form Email id is the Username for login.
+
+# Login Page
+This is Custom Login Page and made by using spring security.
+![image](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/f627527b-c3b2-42aa-a893-27700342e3dc)
+
+# Add Contact
+There are total 7 fields
+1.Enter Name 
+2.Enter Nick Name 
+3.Enter Phone Number
+4.Enter Email id 
+5.Enter Work
+Text Area where you can write Description, I had use TinyMCE for Text Area
+Upload File
+![image](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/bb62ce23-7583-4afd-903e-05347d2f8939)
+
+# Show User Contact List
+All Contact which the user added will shown and if you click on email id then you can see user details.
+
+In this page i had done Pagination and i had give only 5 contact.
+
+
+
+
 
