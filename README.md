@@ -17,4 +17,4 @@ The frontend of the application is built using Html, Css, Thymeleaf. The backend
 
 The Smart-Contact-Manager project is a good example of a full-stack web application with user authentication and CRUD functionality, and it can be used as a starting point for building more complex applications.
 
-
+# Homepage
