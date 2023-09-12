@@ -18,7 +18,7 @@ The frontend of the application is built using Html, Css, Thymeleaf. The backend
 The Smart-Contact-Manager project is a good example of a full-stack web application with user authentication and CRUD functionality, and it can be used as a starting point for building more complex applications.
 
 # Homepage
-![image](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/0032c6fb-4f60-4fbe-add6-7aeebcdaac4c)
+![Home](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/73784bbc-08b4-4015-bfed-bb4c761100e8)
 
 # Register Page
 In Register Form Email id is the Username for login.
