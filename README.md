@@ -22,6 +22,7 @@ The Smart-Contact-Manager project is a good example of a full-stack web applicat
 
 # Register Page
 In Register Form Email id is the Username for login.
+![RegisterPage](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/37710b0a-8f2b-492e-b2ae-4834df6130bd)
 
 # Login Page
 This is Custom Login Page and made by using spring security.
@@ -42,6 +43,12 @@ Upload File
 All Contact which the user added will shown and if you click on email id then you can see user details.
 
 In this page i had done Pagination and i had give only 5 contact.
+
+# View Contact Detail
+By click on Email id Your can view the contact details.
+
+# Update Contact
+By clicking on update button you can update the user data it will update in database also and if you upload new picture then the old picuture will get deleted.
 
 
 
