@@ -26,7 +26,8 @@ In Register Form Email id is the Username for login.
 
 # Login Page
 This is Custom Login Page and made by using spring security.
-![Login_page](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/d25526d0-1f45-4080-9519-665169cb649e)
+![Login_page](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/fd9eb15d-a190-4099-aee6-c9f48f14936b)
+
 
 
 # Add Contact
@@ -38,18 +39,23 @@ There are total 7 fields
 5.Enter Work
 Text Area where you can write Description, I had use TinyMCE for Text Area
 Upload File
-![image](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/bb62ce23-7583-4afd-903e-05347d2f8939)
+![Screenshot (9)](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/b08bee55-d8d8-4961-b030-90d9ba03a5f4)
 
 # Show User Contact List
 All Contact which the user added will shown and if you click on email id then you can see user details.
 
-In this page i had done Pagination and i had give only 5 contact.
+In this page i had done Pagination and i had give only 2 contact.
+![Screenshot (10)](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/8075c39b-e351-4666-8aeb-de9043bfd30f)
+
 
 # View Contact Detail
 By click on Email id Your can view the contact details.
+![Screenshot (11)](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/e5b3a19a-e96f-441b-b550-70b988215700)
+
 
 # Update Contact
 By clicking on update button you can update the user data it will update in database also and if you upload new picture then the old picuture will get deleted.
+![Screenshot (12)](https://github.com/PraveenRajeshSingh/Smart-Contact-Manager/assets/96225294/a8b9c39d-7ad1-4f1d-852a-8859bff9d543)
 
 
 
