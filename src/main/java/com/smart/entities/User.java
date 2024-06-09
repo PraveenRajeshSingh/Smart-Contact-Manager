@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,12 +25,18 @@ public class User {
 	@NotBlank(message = "User Name can not be empty !!")
 	@Size(min = 3, max = 20, message = "User name must be between 3 -20 characters !!")
 	private String name;
+	
 	@Column(unique = true)
 	private String email;
+	
 	private String password;
+	
 	private String role;
+	
 	private boolean enabled;
+	
 	private String imageUrl;
+	
 	@Column(length = 500)
 	private String about;
 

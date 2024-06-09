@@ -7,28 +7,20 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
-
-import com.smart.entities.User;
 
 @Configuration
 @EnableWebSecurity
 public class MyConfig extends WebSecurityConfigurerAdapter {
 
 	@Bean
-	public UserDetailsService getUserDetailsService()
-	{
-		return new UserDetailsServiceImpl();	
+	public UserDetailsService getUserDetailsService() {
+		return new UserDetailsServiceImpl();
 	}
 
-	
 	@Bean
-	public BCryptPasswordEncoder passwordEncoder() 
-	{
+	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
@@ -49,33 +41,15 @@ public class MyConfig extends WebSecurityConfigurerAdapter {
 		auth.authenticationProvider(authenticationProvider());
 	}
 
-
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN")
-		.antMatchers("/user/**").hasRole("USER")
-		.antMatchers("/**")
-		.permitAll()
-		.and()
-		.formLogin()
-		.loginPage("/signin") // this is use to tell the that i have different page so use this
-		.loginProcessingUrl("/dologin")
-		.defaultSuccessUrl("/user/index")
+		http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/user/**").hasRole("USER")
+				.antMatchers("/**").permitAll().and().formLogin().loginPage("/signin") // this is use to tell the that i
+																						// have different page so use
+																						// this
+				.loginProcessingUrl("/dologin").defaultSuccessUrl("/user/index")
 //		.failureUrl("/login_fail")
-		.and()
-		.csrf()
-		.disable();
+				.and().csrf().disable();
 	}
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

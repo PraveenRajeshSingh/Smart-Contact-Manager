@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.smart.config.helper.Message;
 import com.smart.dao.UserRepository;
-
 import com.smart.entities.User;
 
 @Controller
@@ -58,7 +57,7 @@ public class HomeController {
 			HttpSession session) {
 		try {
 			System.out.println("registerUser : ");
-			
+
 			if (!agreement) {
 				System.out.println("You not agreed the terms and conditions");
 				throw new Exception("You not agreed the terms and conditions");
@@ -84,49 +83,27 @@ public class HomeController {
 			m.addAttribute("user", new User());
 			session.setAttribute("message", new Message("Successfully Registered !!", "alert-success"));
 			return "signup";
-			
-			
 
 		} catch (Exception e) {
 			System.out.println("registerUser : ");
-			
+
 			e.printStackTrace();
 			m.addAttribute("user", user);
 			session.setAttribute("message", new Message("something Went Worng !! " + e.getMessage(), "alert-danger"));
 			return "signup";
 		}
-		
 
 	}
 
 	// handler for custom login
 	@RequestMapping("/signin")
 	public String customLogin(Model model) {
-		
+
 		System.out.println("customLogin : ");
-		
+
 		model.addAttribute("title", "Login Page");
-		
+
 		return "login";
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

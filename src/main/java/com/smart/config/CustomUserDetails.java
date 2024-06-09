@@ -8,12 +8,17 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.smart.entities.User;
+
 //Deprecated
-public class CustomUserDetails implements UserDetails{
-	
-	
+public class CustomUserDetails implements UserDetails {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7173963018985454218L;
+
 	private User user;
-	
+
 	public CustomUserDetails(User user) {
 		super();
 		this.user = user;
@@ -23,21 +28,19 @@ public class CustomUserDetails implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 
 		SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(user.getRole());
-		
-		
-		
+
 		return List.of(simpleGrantedAuthority);
 	}
 
 	@Override
 	public String getPassword() {
-		
+
 		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		
+
 		return user.getEmail();
 	}
 
@@ -58,7 +61,7 @@ public class CustomUserDetails implements UserDetails{
 
 	@Override
 	public boolean isEnabled() {
-		
+
 		return true;
 	}
 

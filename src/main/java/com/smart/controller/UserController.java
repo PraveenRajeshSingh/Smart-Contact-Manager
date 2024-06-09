@@ -6,20 +6,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
-import java.sql.Blob;
-import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.constraints.Positive;
 
-import org.hibernate.annotations.Check;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.access.method.P;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,14 +42,14 @@ public class UserController {
 
 	@Autowired
 	private ContactRepository contactRepository;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	// method for add common data to respomse
 	@ModelAttribute
 	public void addCommondata(Model model, Principal principal) {
-		
+
 		System.out.println("addCommondata : ");
 
 		String userName = principal.getName();
@@ -75,7 +70,7 @@ public class UserController {
 																// identifier
 	{
 		System.out.println("dashboard : ");
-		
+
 		model.addAttribute("title", "User Dashboard");
 		return "normal/dash_board";
 	}
@@ -83,9 +78,9 @@ public class UserController {
 	// open add form handler
 	@RequestMapping("/add_contact")
 	public String openAddContactForm(Model model) {
-		
+
 		System.out.println("openAddContactForm : ");
-		
+
 		model.addAttribute("title", "Add Contact");
 		model.addAttribute("contact", new Contact());
 
@@ -98,9 +93,9 @@ public class UserController {
 			Principal principal, HttpSession session) {
 
 		try {
-			
+
 			System.out.println("processContact : ");
-			
+
 			String name = principal.getName();
 
 			User user = this.userRepository.getUsersByUserName(name);
@@ -137,7 +132,7 @@ public class UserController {
 
 		} catch (Exception e) {
 			System.out.println("processContact : ");
-			
+
 			System.out.println("ERROR " + e.getMessage());
 			e.printStackTrace();
 
@@ -153,9 +148,9 @@ public class UserController {
 	// Current page = 0 [page]
 	@GetMapping("/show-contacts/{page}")
 	public String showContacts(@PathVariable("page") Integer page, Model model, Principal principal) {
-		
+
 		System.out.println("showContacts : ");
-		
+
 		model.addAttribute("title", "Show User Contacts");
 
 		// send contacts list we can use this method by using principal
@@ -186,9 +181,9 @@ public class UserController {
 	// showing particular contact Details
 	@RequestMapping("/{cId}/contact")
 	public String showContactDetail(@PathVariable("cId") Integer cId, Model model, Principal principal) {
-		
+
 		System.out.println("showContactDetail : ");
-		
+
 		System.out.println("showContactDetail: cId :" + cId);
 
 		Optional<Contact> contactOptional = this.contactRepository.findById(cId);
@@ -210,9 +205,9 @@ public class UserController {
 	// delete contact handler
 	@GetMapping("/delete/{cId}")
 	public String deleteContact(@PathVariable("cId") Integer cId, Principal principal, HttpSession session) {
-		
+
 		System.out.println("deleteContact : ");
-		
+
 		System.out.println("CID " + cId);
 
 		Contact contact = this.contactRepository.findById(cId).get();
@@ -239,9 +234,9 @@ public class UserController {
 	// open update from handler
 	@PostMapping("/update-contact/{cid}")
 	public String updateForm(@PathVariable("cid") Integer cid, Model model) {
-		
+
 		System.out.println("updateForm : ");
-		
+
 		model.addAttribute("title", "Update Contact");
 
 		Contact contact = this.contactRepository.findById(cid).get();
@@ -256,7 +251,7 @@ public class UserController {
 			Model model, HttpSession session, Principal principal) {
 
 		try {
-			
+
 			System.out.println("updateHandler : ");
 
 			// old contact detail
@@ -302,49 +297,46 @@ public class UserController {
 
 		return "redirect:/user/" + contact.getcId() + "/contact";
 	}
-	//your Profile handler
+
+	// your Profile handler
 	@GetMapping("/profile")
 	public String yourProfile(Model model) {
-		
+
 		System.out.println("yourProfile : ");
-		
+
 		model.addAttribute("title", "Profile Page");
 		return "normal/profile";
 	}
-	
-	//open setting handler
+
+	// open setting handler
 	@GetMapping("/settings")
 	public String openSettings() {
 		return "normal/setting";
 	}
-	
-	//change password handleer
+
+	// change password handleer
 	@PostMapping("/change-password")
-	public String changePassword(@RequestParam("oldPassword") String oldPassword, @RequestParam("newPassword") String newPassword, Principal principal
-			,HttpSession session){
-		System.out.println("OLD PASSWORD : "+ oldPassword);
+	public String changePassword(@RequestParam("oldPassword") String oldPassword,
+			@RequestParam("newPassword") String newPassword, Principal principal, HttpSession session) {
+		System.out.println("OLD PASSWORD : " + oldPassword);
 		System.out.println("NEW PASSWORD : " + newPassword);
-		
+
 		String userName = principal.getName();
 		User currentUser = this.userRepository.getUsersByUserName(userName);
-		
-		if(this.bCryptPasswordEncoder.matches(oldPassword, currentUser.getPassword()))
-		{
-			//change the password
-			
+
+		if (this.bCryptPasswordEncoder.matches(oldPassword, currentUser.getPassword())) {
+			// change the password
+
 			currentUser.setPassword(this.bCryptPasswordEncoder.encode(newPassword));
 			this.userRepository.save(currentUser);
 			session.setAttribute("message", new Message("Your Password is Successfuly Changed !!!", "success"));
-			
-			
-			
-		}else {
-			//error
+
+		} else {
+			// error
 			session.setAttribute("message", new Message("Please enter correct Old Password !!!", "danger"));
 			return "redirect:/user/settings";
 		}
-		
-		
+
 		return "redirect:/user/index";
 	}
 
